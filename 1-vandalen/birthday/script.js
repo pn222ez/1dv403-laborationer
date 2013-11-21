@@ -4,23 +4,23 @@ window.onload = function(){
 
 	
 	var birthday = function(date){
-		var todaysDate = new Date();
+		var todaysDate = new Date(); //Skapar ett nytt datumobjekt för dagens datum och sätter det till 12.00
 		todaysDate.setHours(12);
 		todaysDate.setMinutes(0);
 		todaysDate.setSeconds(0)
 		todaysDate.setMilliseconds(0);
-		var dateObject = new Date(date);
-		if(dateObject=="Invalid Date"){
+		var dateObject = new Date(date); //Skapar nytt datumobjekt för det datumet användaren valt
+		if(dateObject=="Invalid Date"){ //Om datumet är i felaktigt format kastas ett felmeddelande
 			throw new Error("Felaktigt datumformat");
 		}
-		dateObject.setHours(12);
+		dateObject.setHours(12); //Sätter också detta till 12.00
 		dateObject.setMinutes(0);
 		dateObject.setSeconds(0);
 		dateObject.setMilliseconds(0);
 		var difference = dateObject - todaysDate;
 		var year = dateObject.getFullYear();
-		var isLeap = new Date(year, 1, 29).getMonth() == 1;  //Kontrollerar om det är skottår, men är inte säker på att jag behöver använda det. Om man använder ett datumobjekt sköter det väl sig av sig själv?
-		if(difference>=0){
+		var isLeap = new Date(year, 1, 29).getMonth() == 1; //Kontrollerar om det är skottår, men är inte säker på att jag behöver använda det. Om man använder ett datumobjekt sköter det väl sig av sig själv?
+		if(difference>=0){ //Om skillnaden mellan datumen är större nän noll omvandlas skillnaden till hela dagar. Om skillnaden är ett negativt värde har datumet redan varit och ett fel kastas
 			difference = difference/1000;
 			difference = difference/3600;
 			difference = difference/24;

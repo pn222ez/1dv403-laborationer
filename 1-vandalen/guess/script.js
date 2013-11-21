@@ -11,15 +11,12 @@ window.onload = function(){
 		iterator++;
 		console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
 		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
-		var answer = new Array();
+		var answer = new Array(); //Skapar ny array
 		
-		if (number.length == 0) {
-			answer[0] = false;
-			answer[1] = "Du måste ange ett tal!";
-		} else if(isNaN(parseFloat(number)) && !isFinite(number)) {
+		if (number.length == 0 || (isNaN(parseFloat(number)) && !isFinite(number))) { //Om användaren inte fyller i något eller om den inte fyller i ett tal skapas ett felmeddelande
 			answer[0] = false;
 			answer[1] = "Du måste ange ett tal mellan 1 och 100!";
-		} else {
+		} else {																	//Annars kan talet vara rätt, för högt, för lågt eller utanför intervallet
 			if(number == secret) {
 				answer[0] = true;
 				answer[1] = "Grattis du vann! Det hemliga talet var " + secret + " och du behövde " + iterator + " gissningar för att hitta det."
@@ -33,8 +30,7 @@ window.onload = function(){
 				answer[0] = false;
 				answer[1] = "Det hemliga talet är högre!";
 			}
-		}
-				
+		}				
 		return answer;
 	};
 	
