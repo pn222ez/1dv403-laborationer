@@ -20,12 +20,12 @@ window.onload = function(){
 			if(number == secret) {
 				answer[0] = true;
 				answer[1] = "Grattis du vann! Det hemliga talet var " + secret + " och du behövde " + iterator + " gissningar för att hitta det."
+			} else if (number < 1 || number > 100) {
+				answer[0] = false;
+				answer[1] = "Talet är utanför intervallet 1 - 100";
 			} else if (number > secret) {
 				answer[0] = false;
 				answer[1] = "Det hemliga talet är lägre!";
-			} else if (number<1 || number>100) {
-				answer[0] = false;
-				answer[1] = "Talet är utanför intervallet 1 - 100";
 			} else if(number < secret) {
 				answer[0] = false;
 				answer[1] = "Det hemliga talet är högre!";

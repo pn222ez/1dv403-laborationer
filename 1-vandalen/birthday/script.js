@@ -13,6 +13,7 @@ window.onload = function(){
 		if(dateObject=="Invalid Date"){ //Om datumet är i felaktigt format kastas ett felmeddelande
 			throw new Error("Felaktigt datumformat");
 		}
+		dateObject.setFullYear(todaysDate.getFullYear()); //Sätter det inmatade datumet till samma år som dagens datum
 		dateObject.setHours(12); //Sätter också detta till 12.00
 		dateObject.setMinutes(0);
 		dateObject.setSeconds(0);
@@ -26,8 +27,14 @@ window.onload = function(){
 			difference = difference/24;
 			difference = Math.round(difference);
 			return difference;
-		} else {
-			throw new Error("Datumet har redan varit");
+		} else { //Om datumet redan har varit sätts året till nästa år och tiden tills dess beräknas
+			dateObject.setFullYear(todaysDate.getFullYear()+1);
+			difference = dateObject - todaysDate;
+			difference = difference/1000;
+			difference = difference/3600;
+			difference = difference/24;
+			difference = Math.round(difference);
+			return difference;
 		}
 	};
 	// ------------------------------------------------------------------------------
