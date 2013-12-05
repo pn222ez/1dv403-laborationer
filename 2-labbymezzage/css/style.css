@@ -1,0 +1,73 @@
+body {
+	display: block;
+}
+
+.delete {
+	background-image: url("pics/delete.png");
+	background-repeat:no-repeat;
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+}
+
+.info {
+	background-image: url("pics/info.png");
+	background-repeat:no-repeat;
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+}
+
+#send {
+	float: left;
+}
+
+#count {
+	float: right;
+}
+
+p {
+	margin:0;
+	padding:0;
+	display: block;
+	float: left;
+}
+
+figure {
+	margin:0;
+	padding:0;
+	display: block;
+	float: right;
+}
+
+#message-area {
+	width: 300px;
+	height: 200px;
+}
+
+.the-message {
+	background-color: #F2EBBF;
+	min-height: 30px;
+	width: 350px;
+	margin:10px 0 0 0;
+	padding:0;
+	display: block;
+	float: left;
+}
+
+.message-info {
+	min-height: 30px;
+	width: 50px;
+	margin:10px 0 0 0;
+	padding:0;
+	display: block;
+	float: right;
+}
+
+#mess {
+	width: 400px;
+	height: auto;
+	display: block;
+}
